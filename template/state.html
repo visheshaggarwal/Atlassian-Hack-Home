@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>State Information</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="district">All Districts Info</a>
+            </li>
+          
+            <li class="nav-item">
+                <a class="nav-link" href="info">Latest Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="FAQs">FAQs</a>
+            </li>
+        </ul>
+        
+        <div class="topnav-right"> 
+            <form class="form-inline" method="POST" action="">
+            <input name = 'City' id='City' class="form-control mr-sm-2" type="text" placeholder="Search Particular State">
+            <button id='done' class="btn btn-success" type="submit">Search</button>
+            </form> 
+        </div>
+        
+      </nav>
+
+    <br><br><br>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Total Confirmed</th>
+            <th>Cured/Discharged/Migrated</th>
+            <th>Deaths</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in table_list %}
+          <tr>
+            <td>{{x[0]}}</td>
+            <td>{{x[1]}}</td>
+            <td>{{x[2]}}</td>
+            <td>{{x[3]}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+
+</body>
+</html>
